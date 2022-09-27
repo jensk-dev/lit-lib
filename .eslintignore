@@ -1,0 +1,7 @@
+/*.config.cjs
+/*.config.ts
+**/.prettierrc.cjs
+**/.eslintrc.cjs
+/types/*
+/dist/*
+/coverage/*
