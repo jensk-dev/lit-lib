@@ -26,9 +26,13 @@
     "lint:fix": "eslint --fix .",
     "format": "prettier -w --list-different .",
     "lint:staged": "lint-staged",
-    "prepare": "husky install",
+    "prepare": "husky install && cypress verify",
     "package": "pnpm publish ./dist --access=public",
-    "package:dry-run": "pnpm publish ./dist --access=public --dry-run"
+    "package:dry-run": "pnpm publish ./dist --access=public --dry-run",
+    "e2e:open": "cypress open --e2e",
+    "e2e:run": "cypress run --e2e",
+    "e2e:verify": "cypress verify",
+    "e2e:start": "concurrently --raw --kill-others --success \"all\" \"pnpm run dev\" \"pnpm run e2e:open\""
   },
   "dependencies": {
     "lit": "^2.3.1"
@@ -39,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "@vitest/coverage-c8": "^0.23.4",
+    "cypress": "^10.9.0",
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
