@@ -18,6 +18,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "bundle": "tsc && vite build",
+    "bundle:with-lit": "",
     "test": "vitest",
     "test:run": "vitest run",
     "test:cover": "vitest run --coverage",
@@ -35,30 +37,30 @@
     "e2e:start": "concurrently --raw --kill-others --success \"all\" \"pnpm run dev\" \"pnpm run e2e:open\""
   },
   "dependencies": {
-    "lit": "^2.3.1"
+    "lit": "^2.4.0"
   },
   "devDependencies": {
     "@jensk/rollup-plugin-package-process": "^0.0.8",
     "@types/jsdom": "^20.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "@vitest/coverage-c8": "^0.23.4",
-    "cypress": "^10.9.0",
-    "eslint": "^8.24.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vitest/coverage-c8": "^0.24.5",
+    "cypress": "^10.11.0",
+    "eslint": "^8.26.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-lit": "^1.6.1",
-    "happy-dom": "^6.0.4",
+    "happy-dom": "^7.6.6",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.7.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0",
-    "vitest": "^0.23.4"
+    "typescript": "^4.8.4",
+    "vite": "^3.2.2",
+    "vitest": "^0.24.5"
   }
 }

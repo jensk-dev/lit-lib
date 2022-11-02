@@ -4,6 +4,8 @@ import packageProcess from "@jensk/rollup-plugin-package-process";
 import { defineConfig } from "vitest/config";
 
 const OUT_DIR = `dist`;
+const PACKAGE_DIR = `${OUT_DIR}/package`;
+const BUNDLE_DIR = `${OUT_DIR}/bundle`;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,7 +19,7 @@ export default defineConfig({
     rollupOptions: {
       external: /^lit/,
       output: {
-        dir: OUT_DIR,
+        dir: PACKAGE_DIR,
         preserveModules: true,
         inlineDynamicImports: false,
         entryFileNames: "[name].js",
@@ -36,14 +38,14 @@ export default defineConfig({
   plugins: [
     // copy over the types into the dist folder
     copy({
-      targets: [{ src: "types/*", dest: OUT_DIR }],
+      targets: [{ src: "types/*", dest: PACKAGE_DIR }],
       hook: "generateBundle",
     }),
 
     // strip inaccurate information from dist bundle
     packageProcess({
       output: {
-        dir: `${OUT_DIR}`,
+        dir: `${PACKAGE_DIR}`,
         replaceExisting: true,
       },
       process: inputPackage => {
